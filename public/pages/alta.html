@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Alta de productos | Juguetería Cósmica</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+
+<body>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__brand">
+                <a href="../index.html" class="header__logo">
+                    <img src="../assets/logo.png" alt="Logo de Juguetería Cósmica" class="header__logo-image">
+                </a>
+            </h1>
+
+            <form class="header__search" role="search">
+                <label for="search" class="header__search-label">Buscar productos</label>
+                <button type="button" class="header__search-toggle" aria-label="Abrir búsqueda">🔍</button>
+                <input
+                    type="search"
+                    id="search"
+                    name="search"
+                    class="header__search-input"
+                    placeholder="Buscar juguetes..."
+                >
+            </form>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Inicio</a></li>
+                    <li class="nav__item"><a href="alta.html" class="nav__link">Alta</a></li>
+                    <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+                    <li class="nav__item"><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main main--form">
+    <section class="form-page">
+
+      <h2 class="form-page__title">Alta de producto</h2>
+
+      <form class="product-form" id="productForm" >
+
+        <!-- Nombre -->
+        <div class="form__group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <!-- Precio -->
+        <div class="form__group">
+          <label for="price">Precio</label>
+          <input type="number" id="price" name="price" min="0" required>
+        </div>
+
+        <!-- Stock -->
+        <div class="form__group">
+          <label for="stock">Stock</label>
+          <input type="number" id="stock" name="stock" min="0" required>
+        </div>
+
+        <!-- Marca -->
+        <div class="form__group">
+          <label for="brand">Marca</label>
+          <input type="text" id="brand" name="brand" required>
+        </div>
+
+        <!-- Categoría -->
+        <div class="form__group">
+          <label for="category">Categoría</label>
+          <select id="category" name="category" required>
+            <option value="">Seleccionar</option>
+            <option value="figuras">Figuras</option>
+            <option value="educativos">Educativos</option>
+            <option value="peluches">Peluches</option>
+          </select>
+        </div>
+
+        <!-- Descripción corta -->
+        <div class="form__group form__group--full">
+          <label for="shortDescription">Descripción corta</label>
+          <textarea
+            id="shortDescription"
+            name="shortDescription"
+            maxlength="100"
+            required></textarea>
+        </div>
+
+        <!-- Descripción larga -->
+        <div class="form__group form__group--full">
+          <label for="longDescription">Descripción larga</label>
+          <textarea
+            id="longDescription"
+            name="longDescription"
+            rows="4"
+            required></textarea>
+        </div>
+
+        <!-- Envío sin cargo -->
+        <div class="form__group form__group--full form__group--checkbox">
+          <label>
+            <input type="checkbox" id="freeShipping" name="freeShipping">
+            Envío sin cargo
+          </label>
+        </div>
+
+        <!-- Edad desde -->
+        <div class="form__group">
+          <label for="ageFrom">Edad desde</label>
+          <input type="number" id="ageFrom" name="ageFrom" min="0" required>
+        </div>
+
+        <!-- Edad hasta -->
+        <div class="form__group">
+          <label for="ageTo">Edad hasta</label>
+          <input type="number" id="ageTo" name="ageTo" min="0" required>
+        </div>
+
+        <!-- Foto -->
+        <div class="form__group form__group--full">
+          <label for="image">Foto del producto</label>
+          <input type="file" id="image" name="image" accept="image/*">
+        </div>
+
+        <!-- Botón -->
+        <button type="submit"
+                class="btn btn--primary form__group--full">
+          Guardar producto
+        </button>
+
+      </form>
+    </section>
+  </main>
+
+  <script src="../js/product-form.js"></script>
+  
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p class="footer__text">
+      © 2025 Juguetería Cósmica. Todos los derechos reservados.
+    </p>
+  </footer>
+</body>
+</html>
